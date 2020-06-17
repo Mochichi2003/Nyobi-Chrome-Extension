@@ -1,0 +1,29 @@
+{
+  "name": "noyobibi",
+  "description": "N予備校の動画履歴を表示する拡張機能です",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "icons": {
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png"
+  },
+  "browser_action": {
+    "default_title": "noyobibi",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "chrome_style": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.nnn.ed.nico/*"],
+      "js": ["vue.js", "content.js"]
+    }
+  ],
+  "permissions": ["activeTab", "https://www.nnn.ed.nico/*"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
