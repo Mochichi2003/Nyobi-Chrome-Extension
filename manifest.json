@@ -22,8 +22,16 @@
     {
       "matches": ["https://www.nnn.ed.nico/*"],
       "js": ["vue.js", "content.js"]
+    },
+    {
+      "matches": ["https://www.nnn.ed.nico/lessons/*"],
+      "js": ["vue.js","content-video.js"]
     }
   ],
-  "permissions": ["activeTab", "https://www.nnn.ed.nico/*"],
+  "permissions": [
+    "activeTab",
+    "https://www.nnn.ed.nico/*",
+    "https://www.nnn.ed.nico/lessons/*"
+  ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
