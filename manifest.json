@@ -30,6 +30,7 @@
   ],
   "permissions": [
     "activeTab",
+    "storage",
     "https://www.nnn.ed.nico/*",
     "https://www.nnn.ed.nico/lessons/*"
   ],

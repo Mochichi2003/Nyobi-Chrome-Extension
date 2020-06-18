@@ -3,8 +3,12 @@
 // https://www.nnn.ed.nico/lessons/482528777?videoplayed=1355 URLパラメータのテスト
 (function () {
   "use strict";
+
+  
   var video_url = location.href;
   var time_played_second = null;
+
+  
 
   // window.onload(() => {
   var arg = new Object();
@@ -24,11 +28,11 @@
   console.log(Number(arg.videoplayed));
   var saiseisurutoko = parseInt(arg.videoplayed);
   console.log(saiseisurutoko);
-  
+
   window.onload = function () {
     document.querySelector(
       "#vjs_video_3_html5_api"
-    ).currentTime = saiseisurutoko;
+    ).currentTime = saiseisurutoko; //ページ読み込んで動画の再生を開始するところを指定するところ
   };
   // });
 
@@ -36,6 +40,7 @@
     time_played_second = document.querySelector("#vjs_video_3_html5_api")
       .currentTime; //再生時間を取得するところ
     console.log(video_url + "  " + time_played_second);
+    console.log(location.origin + location.pathname);
   }, 1000);
   let vm = new Vue({
     el: "#vue-app",
