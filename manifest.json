@@ -25,7 +25,12 @@
     },
     {
       "matches": ["https://www.nnn.ed.nico/lessons/*"],
-      "js": ["vue.js","content-video.js"]
+      "js": [
+        "vue.js",
+        "jquery-3.5.1.min.js",
+        "js.cookie.js",
+        "content-video.js"
+      ]
     }
   ],
   "permissions": [

@@ -4,11 +4,15 @@
 (function () {
   "use strict";
 
-  
   var video_url = location.href;
   var time_played_second = null;
 
-  
+  var url_streage = {
+    /**
+     * TODO テスト用後で消す
+     */
+    "https://www.nnn.ed.nico/lessons/482528777": [143123, "titele"],
+  };
 
   // window.onload(() => {
   var arg = new Object();
@@ -39,8 +43,22 @@
   setInterval(() => {
     time_played_second = document.querySelector("#vjs_video_3_html5_api")
       .currentTime; //再生時間を取得するところ
-    console.log(video_url + "  " + time_played_second);
-    console.log(location.origin + location.pathname);
+    url_streage[`${location.origin + location.pathname}`] = [
+      time_played_second,
+      document.title,
+    ];
+    // chrome.storage.local.set({ "noyobibi": url_streage }, function () {}); //Chromeストレージ
+    // chrome.storage.local.get("noyobibi", function (value) {
+    //   var value_data = value.key;
+    //   console.log(value_data);
+    // });
+    // console.log(video_url + "  " + time_played_second);
+    // console.log(location.origin + location.pathname);
+    console.log(document.cookie);
+
+    console.log(
+      url_streage[`${location.origin + location.pathname}`].time_played_second
+    );
   }, 1000);
   let vm = new Vue({
     el: "#vue-app",
