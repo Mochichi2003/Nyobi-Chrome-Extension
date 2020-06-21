@@ -1,6 +1,6 @@
 {
   "name": "noyobibi",
-  "description": "N予備校の動画履歴を表示する拡張機能です",
+  "description": "N予備校の動画履歴を表示する拡張機能です。またスペースをおすことで動画の停止と再生ができるようにする",
   "version": "0.0.1",
   "manifest_version": 2,
   "icons": {

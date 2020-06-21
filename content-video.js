@@ -1,5 +1,7 @@
 // https://www.nnn.ed.nico/lessons/* で動く
-
+/**
+ * TODO スペースで再生停止ができるようにする
+ */
 // https://www.nnn.ed.nico/lessons/482528777?videoplayed=1355 URLパラメータのテスト
 (function () {
   "use strict";
@@ -11,7 +13,7 @@
     /**
      * TODO テスト用後で消す
      */
-    "https://www.nnn.ed.nico/lessons/482528777": [143123, "titele"],
+    "https://www.nnn.ed.nico/lessons/4825287てすと7": [143123, "titele"],
   };
 
   // window.onload(() => {
@@ -52,9 +54,16 @@
     //   var value_data = value.key;
     //   console.log(value_data);
     // });
+    console.log(url_streage);
+    document.cookie = `video_urls=${JSON.stringify(url_streage)}`;
     // console.log(video_url + "  " + time_played_second);
     // console.log(location.origin + location.pathname);
     console.log(document.cookie);
+    var cookieValue = document.cookie.replace(
+      /(?:(?:^|.*;\s*)video_urls\s*\=\s*([^;]*).*$)|^.*$/,
+      "$1"
+    );
+    console.log(JSON.parse(cookieValue));
 
     console.log(
       url_streage[`${location.origin + location.pathname}`].time_played_second

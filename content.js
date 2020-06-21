@@ -100,6 +100,10 @@
         border-color: rgb(246, 246, 246);
         padding: 24px 14px;
       }
+
+      .main a {
+        cursor: pointer;
+      }
     </style>
     <div id="nyobi-extensin-app">
       <div class="video-histry">
