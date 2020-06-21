@@ -117,7 +117,7 @@
         <div>
 
           <!-- ここから履歴 -->
-          <a href="">
+          <!-- <a href="">
             <p class="sc-1otp79h-0">動画の名前ええええええええええええええええええええええええええええ<span>13:20</span></p>
           </a>
         </div>
@@ -152,83 +152,33 @@
           <a href="">
             <p class="sc-1otp79h-0">asdfja;lsdkfjlaksjdflkja<span>13:20</span></p>
           </a>
-        </div>
-        <h3>わああああああああああ</h3>
-        <div v-for="video in videos">
+        </div> -->
+          <!-- <h3>わああああああああああ</h3> -->
+          <!-- <div v-for="video in videos">
           <a href="video.">
             <p class="sc-1otp79h-0"><span>{{video[2]}}</span></p>
           </a>
+        </div> -->
+          <div v-for="value in videos">
+            <a href="">
+              <p class="sc-1otp79h-0">{{value[2]}}<span>{{value[1]}}</span></p>
+            </a>
+          </div>
+
         </div>
-
-
       </div>
+      <br>
     </div>
+    <div>てすと</div>
+    <!-- <div id="app">
+      {{message}}
+    </div> -->
     {{waaa}}
-    <br>
     {{$data.videos}}
   </div>
-  <div>てすと</div>
-  <!-- <div id="app">
-    {{message}}
-  </div> -->
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script>
-    const vid = {
-      "https://www.nnn.ed.nico/lessons/4825287てすと7": [143123, "titele"],
-      "https://www.nnn.ed.nico/lessons/482528777": [610, "英作文 第1講 - N予備校"],
-      "https://www.nnn.ed.nico/lessons/482529131": [
-        "https://www.nnn.ed.nico/lessons/482529131",
-        610,
-        "【2019年度】生物演習 第7講 - N予備校",
-      ],
-      "https://www.nnn.ed.nico/lessons/482527679": [
-        "https://www.nnn.ed.nico/lessons/482527679",
-        605,
-        "【2018年度】数学IIB ベーシック 第1講 - N予備校",
-      ],
-      "https://www.nnn.ed.nico/lessons/482527398": [
-        "https://www.nnn.ed.nico/lessons/482527398",
-        609.825475,
-        "【2018年度】英文読解 ベーシック 第3講 - N予備校",
-      ],
-    };
-var videodata ={
-          "https://www.nnn.ed.nico/lessons/4825287てすと7": [143123, "titele"],
-          "https://www.nnn.ed.nico/lessons/482528777": [610, "英作文 第1講 - N予備校"],
-          "https://www.nnn.ed.nico/lessons/482529131": [
-            "https://www.nnn.ed.nico/lessons/482529131",
-            610,
-            "【2019年度】生物演習 第7講 - N予備校",
-          ],
-          "https://www.nnn.ed.nico/lessons/482527679": [
-            "https://www.nnn.ed.nico/lessons/482527679",
-            605,
-            "【2018年度】数学IIB ベーシック 第1講 - N予備校",
-          ],
-          "https://www.nnn.ed.nico/lessons/482527398": [
-            "https://www.nnn.ed.nico/lessons/482527398",
-            609.825475,
-            "【2018年度】英文読解 ベーシック 第3講 - N予備校",
-          ],
-        }
-    var app = new Vue({
-      el: '#vue-app',
-      data: {
-        message: 'Hello Vue!',
-        waaa: "わああああああああああい",
-        videos: videodata
-      }
-    });
-    // var vm = new vue({
-    //   el: "#vue-app",
-    //   data: {
-    //     waaa: "わああああああああああい",
-    //     videos: vid
-    //   }
-    // })
-  </script>
-
   <!-- <script src="vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="testtt.js"></script>
 </body>
 
 </html>
