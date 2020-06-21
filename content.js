@@ -7,7 +7,7 @@
     .insertAdjacentHTML(
       "beforeEnd",
       `
-      <div id="vue-app">
+      
       <style>
         #nyobi-extensin-app {
           width: 384px;
@@ -106,13 +106,14 @@
           cursor: pointer;
         }
       </style>
+      <div id="vue-app">
+      
       <div id="nyobi-extensin-app">
         <div class="video-histry">
           <h3>動画の再生履歴</h3>
         </div>
         <div class="main">
           <div>
-  
             <!-- ここから履歴 -->
             <a href="">
               <p class="sc-1otp79h-0">動画の名前ええええええええええええええええええええええええええええ<span>13:20</span></p>
@@ -154,7 +155,9 @@
   
         </div>
       </div>
+
       {{videos}}
+        
       </div>
     `
     );

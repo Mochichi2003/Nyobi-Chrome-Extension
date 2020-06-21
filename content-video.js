@@ -13,7 +13,7 @@
     /**
      * TODO テスト用後で消す
      */
-    "https://www.nnn.ed.nico/lessons/4825287てすと7": [143123, "titele"],
+    // "https://www.nnn.ed.nico/lessons/4825287てすと7": [143123, "titele"],
   };
 
   url_streage = JSON.parse(
@@ -53,8 +53,9 @@
     time_played_second = document.querySelector("#vjs_video_3_html5_api")
       .currentTime; //再生時間を取得するところ
     url_streage[`${location.origin + location.pathname}`] = [
-      time_played_second,
-      document.title,
+      location.origin + location.pathname, //動画のURL
+      time_played_second, //動画の再生した時間
+      document.title, //動画のタイトル
     ];
     // chrome.storage.local.set({ "noyobibi": url_streage }, function () {}); //Chromeストレージ
     // chrome.storage.local.get("noyobibi", function (value) {
@@ -62,17 +63,16 @@
     //   console.log(value_data);
     // });
     // console.log(url_streage);
-    document.cookie = `video_urls=${JSON.stringify(
-      url_streage
-    )};path=/`;
+    document.cookie = `video_urls=${JSON.stringify(url_streage)};path=/`;
+
     // console.log(video_url + "  " + time_played_second);
     // console.log(location.origin + location.pathname);
-    console.log(document.cookie);
+    // console.log(document.cookie);
     var cookieValue = document.cookie.replace(
       /(?:(?:^|.*;\s*)video_urls\s*\=\s*([^;]*).*$)|^.*$/,
       "$1"
     );
-    // console.log(JSON.parse(cookieValue));
+    console.log(JSON.parse(cookieValue));
 
     // console.log(
     //   url_streage[`${location.origin + location.pathname}`].time_played_second
