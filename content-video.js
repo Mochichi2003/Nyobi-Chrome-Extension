@@ -16,7 +16,14 @@
     "https://www.nnn.ed.nico/lessons/4825287てすと7": [143123, "titele"],
   };
 
-  // window.onload(() => {
+  url_streage = JSON.parse(
+    document.cookie.replace(
+      /(?:(?:^|.*;\s*)video_urls\s*\=\s*([^;]*).*$)|^.*$/,
+      "$1"
+    )
+  ); //Cookieに入れてた最生履歴を戻す
+  console.log(url_streage);
+
   var arg = new Object();
 
   // 変数pairにURLの?の後ろを&で区切ったものを配列にして代入
@@ -54,8 +61,10 @@
     //   var value_data = value.key;
     //   console.log(value_data);
     // });
-    console.log(url_streage);
-    document.cookie = `video_urls=${JSON.stringify(url_streage)}`;
+    // console.log(url_streage);
+    document.cookie = `video_urls=${JSON.stringify(
+      url_streage
+    )};path=/`;
     // console.log(video_url + "  " + time_played_second);
     // console.log(location.origin + location.pathname);
     console.log(document.cookie);
@@ -63,11 +72,11 @@
       /(?:(?:^|.*;\s*)video_urls\s*\=\s*([^;]*).*$)|^.*$/,
       "$1"
     );
-    console.log(JSON.parse(cookieValue));
+    // console.log(JSON.parse(cookieValue));
 
-    console.log(
-      url_streage[`${location.origin + location.pathname}`].time_played_second
-    );
+    // console.log(
+    //   url_streage[`${location.origin + location.pathname}`].time_played_second
+    // );
   }, 1000);
   let vm = new Vue({
     el: "#vue-app",
