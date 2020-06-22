@@ -27,9 +27,9 @@
     url_streage = {};
   }
 
-  console.log(url_streage);
+// console.log(url_streage);
 
-  console.log(url_streage);
+// console.log(url_streage);
 
   var arg = new Object();
 
@@ -45,9 +45,9 @@
 
     arg[kv[0]] = kv[1]; // kv[0]がkey,kv[1]がvalue
   }
-  console.log(Number(arg.videoplayed));
+// console.log(Number(arg.videoplayed));
   var saiseisurutoko = parseInt(arg.videoplayed);
-  console.log(saiseisurutoko);
+// console.log(saiseisurutoko);
 
   window.onload = function () {
     document.querySelector(
@@ -82,7 +82,7 @@
     // chrome.storage.local.set({ "noyobibi": url_streage }, function () {}); //Chromeストレージ
     // chrome.storage.local.get("noyobibi", function (value) {
     //   var value_data = value.key;
-    //   console.log(value_data);
+    // // console.log(value_data);
     // });
     // console.log(url_streage);
     document.cookie = `video_urls=${JSON.stringify(url_streage)};path=/`;
@@ -94,8 +94,8 @@
       /(?:(?:^|.*;\s*)video_urls\s*\=\s*([^;]*).*$)|^.*$/,
       "$1"
     );
-    console.log(JSON.parse(cookieValue));
-    console.log(cookieValue);
+  // console.log(JSON.parse(cookieValue));
+  // console.log(cookieValue);
 
     // console.log(
     //   url_streage[`${location.origin + location.pathname}`].time_played_second
@@ -114,11 +114,11 @@
 
 window.addEventListener("keydown", (event) => {
   var video = document.querySelector("#vjs_video_3_html5_api");
-  console.log("event = " + event.keyCode);
+// console.log("event = " + event.keyCode);
   if (event.keyCode === 32) {
     //スペースが押された時
 
-    console.log("event スペースが押されました");
+  // console.log("event スペースが押されました");
     if (video.paused) {
       video.play(); // 動画再生が始まり、video.pausedはfalseになる
     } else {
