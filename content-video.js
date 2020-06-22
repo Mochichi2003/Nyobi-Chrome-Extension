@@ -111,3 +111,18 @@
 })();
 //"https://www.nnn.ed.nico/lessons/482527633"
 //#vjs_video_3_html5_apiビデオのセレクター
+
+window.addEventListener("keydown", (event) => {
+  console.log("event = " + event.keyCode);
+  if (event.keyCode === 32) {//スペースが押された時
+    var video = document.querySelector("#vjs_video_3_html5_api")
+
+    console.log("event スペースが押されました");
+    if (video.paused) {
+      video.play(); // 動画再生が始まり、video.pausedはfalseになる
+    } else {
+      video.pause(); // 動画再生が止まり、video.pausedはtrueになる
+    }
+  }
+  document.querySelector("#vjs_video_3_html5_api");
+});
