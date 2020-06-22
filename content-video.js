@@ -16,12 +16,19 @@
     // "https://www.nnn.ed.nico/lessons/4825287てすと7": [143123, "titele"],
   };
 
-  url_streage = JSON.parse(
-    document.cookie.replace(
-      /(?:(?:^|.*;\s*)video_urls\s*\=\s*([^;]*).*$)|^.*$/,
-      "$1"
-    )
-  ); //Cookieに入れてた最生履歴を戻す
+  try {
+    url_streage = JSON.parse(
+      document.cookie.replace(
+        /(?:(?:^|.*;\s*)video_urls\s*\=\s*([^;]*).*$)|^.*$/,
+        "$1"
+      )
+    ); //Cookieに入れてた最生履歴を戻す
+  } catch {
+    url_streage = {};
+  }
+
+  console.log(url_streage);
+
   console.log(url_streage);
 
   var arg = new Object();
@@ -50,11 +57,26 @@
   // });
 
   setInterval(() => {
+    try {
+      url_streage = JSON.parse(
+        document.cookie.replace(
+          /(?:(?:^|.*;\s*)video_urls\s*\=\s*([^;]*).*$)|^.*$/,
+          "$1"
+        )
+      ); //Cookieに入れてた最生履歴を戻す
+    } catch {
+      url_streage = {};
+    }
+
     time_played_second = document.querySelector("#vjs_video_3_html5_api")
       .currentTime; //再生時間を取得するところ
+
     url_streage[`${location.origin + location.pathname}`] = [
+      new Date().getTime(), //再生してるときの時間順番のソートにつかう
       location.origin + location.pathname, //動画のURL
       time_played_second, //動画の再生した時間
+      Math.floor(time_played_second / 60), //動画を再生した時間 〇〇分
+      time_played_second % 60, //動画を再生した時間 〇〇秒
       document.title, //動画のタイトル
     ];
     // chrome.storage.local.set({ "noyobibi": url_streage }, function () {}); //Chromeストレージ
@@ -73,11 +95,13 @@
       "$1"
     );
     console.log(JSON.parse(cookieValue));
+    console.log(cookieValue);
 
     // console.log(
     //   url_streage[`${location.origin + location.pathname}`].time_played_second
     // );
   }, 1000);
+
   let vm = new Vue({
     el: "#vue-app",
     data: {
@@ -85,3 +109,4 @@
     },
   });
 })();
+//"https://www.nnn.ed.nico/lessons/482527633"

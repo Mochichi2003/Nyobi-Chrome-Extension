@@ -1,22 +1,41 @@
 var videodata = {
-  "https://www.nnn.ed.nico/lessons/4825287てすと7": [143123, "titele"],
-  "https://www.nnn.ed.nico/lessons/482528777": [610, "英作文 第1講 - N予備校"],
-  "https://www.nnn.ed.nico/lessons/482529131": [
-    "https://www.nnn.ed.nico/lessons/482529131",
+  "https://www.nnn.ed.nico/lessons/482527698": [
+    1592785131257,
+    "https://www.nnn.ed.nico/lessons/482527698",
+    608,
+    10,
+    8,
+    "【2018年度】数学IIB ベーシック 第20講 - N予備校",
+  ],
+  "https://www.nnn.ed.nico/lessons/482529125": [
+    1592785131260,
+    "https://www.nnn.ed.nico/lessons/482529125",
     610,
-    "【2019年度】生物演習 第7講 - N予備校",
+    10,
+    10,
+    "【2019年度】生物演習 第1講 - N予備校",
   ],
-  "https://www.nnn.ed.nico/lessons/482527679": [
-    "https://www.nnn.ed.nico/lessons/482527679",
-    605,
-    "【2018年度】数学IIB ベーシック 第1講 - N予備校",
+  "https://www.nnn.ed.nico/lessons/482530635": [
+    1592785103411,
+    "https://www.nnn.ed.nico/lessons/482530635",
+    3036.914637,
+    50,
+    36.91463699999986,
+    "プログラミング入門コースをはじめる方へ / プログラミングを体験してみよう - N予備校",
   ],
-  "https://www.nnn.ed.nico/lessons/482527398": [
-    "https://www.nnn.ed.nico/lessons/482527398",
-    609.825475,
-    "【2018年度】英文読解 ベーシック 第3講 - N予備校",
+  "https://www.nnn.ed.nico/lessons/482527680": [
+    1592785131935,
+    "https://www.nnn.ed.nico/lessons/482527680",
+    613.480649,
+    10,
+    13.480648999999971,
+    "【2018年度】数学IIB ベーシック 第2講 - N予備校",
   ],
 };
+
+// var arr = videodata.reverse()
+// console.log(arr);
+
 var app = new Vue({
   el: "#vue-app",
   data: {
@@ -26,8 +45,14 @@ var app = new Vue({
   },
   computed: {
     // 配列の要素順番を逆順にする
-    reverseItems() {
-      return this.videos.slice().reverse();
+    timesort: function () {},
+  },
+  filters: {
+    rounded_down: function (val) {
+      return Math.ceil(val);
+    },
+    Subtract_ten: function (value) {
+      return value - 10;
     },
   },
 });

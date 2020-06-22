@@ -10,7 +10,7 @@
   <style>
     #nyobi-extensin-app {
       width: 384px;
-      height: 518px;
+      max-height: 518px;
       line-height: 1.15;
       color: #222;
       font-family: Avenir, Open Sans, -apple-system, BlinkMacSystemFont, ZaneYuGothicM, Meiryo, sans-serif;
@@ -101,6 +101,11 @@
       padding: 24px 14px;
     }
 
+    .plye_dsecond {
+      /* color: #116	215	120	; */
+      color: rgb(116, 215, 120);
+    }
+
     .main a {
       cursor: pointer;
     }
@@ -117,51 +122,11 @@
         <div>
 
           <!-- ここから履歴 -->
-          <!-- <a href="">
-            <p class="sc-1otp79h-0">動画の名前ええええええええええええええええええええええええええええ<span>13:20</span></p>
-          </a>
-        </div>
-        <div>
-          <a href="">
-            <p class="sc-1otp79h-0">動画の名前ええええええええええええええええええええええええええええ<span>13:20</span></p>
-          </a>
-        </div>
-        <div>
-          <a href="">
-            <p class="sc-1otp79h-0">動画の名前ええええええええええええええええええええええええええええ<span>13:20</span></p>
-          </a>
-        </div>
-        <div>
-          <a href="">
-            <p class="sc-1otp79h-0">asdffff fffffffffffffffffffffffffffffffffffffffffffff fffffffffffffff<span
-                class="video-was-played">13:20</span>
-            </p>
-          </a>
-        </div>
-        <div>
-          <a href="">
-            <p class="sc-1otp79h-0">asdfja;lsdkfjlaksjdflkja<span>13:20</span></p>
-          </a>
-        </div>
-        <div>
-          <a href="">
-            <p class="sc-1otp79h-0">asdfja;lsdkfjlaksjdflkja<span>13:20</span></p>
-          </a>
-        </div>
-        <div>
-          <a href="">
-            <p class="sc-1otp79h-0">asdfja;lsdkfjlaksjdflkja<span>13:20</span></p>
-          </a>
-        </div> -->
-          <!-- <h3>わああああああああああ</h3> -->
-          <!-- <div v-for="video in videos">
-          <a href="video.">
-            <p class="sc-1otp79h-0"><span>{{video[2]}}</span></p>
-          </a>
-        </div> -->
-          <div v-for="value in videos">
-            <a href="">
-              <p class="sc-1otp79h-0">{{value[2]}}<span>{{value[1]}}</span></p>
+
+          <div v-for="value in videos" v-bind:key="videos[0]">
+            <a v-bind:href="value[1] + '?videoplayed=' + value[2]" target="_blank" rel="noopener noreferrer">
+              <p class="sc-1otp79h-0">{{value[5]}}<span
+                  class="plye_dsecond">{{ value[3] |Subtract_ten}}:{{ value[4] | rounded_down}}</span></p>
             </a>
           </div>
 
@@ -173,8 +138,7 @@
     <!-- <div id="app">
       {{message}}
     </div> -->
-    {{waaa}}
-    {{$data.videos}}
+    
   </div>
   <!-- <script src="vue.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
