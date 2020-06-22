@@ -110,3 +110,4 @@
   });
 })();
 //"https://www.nnn.ed.nico/lessons/482527633"
+//#vjs_video_3_html5_apiビデオのセレクター

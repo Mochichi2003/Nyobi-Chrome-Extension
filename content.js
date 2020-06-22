@@ -124,7 +124,7 @@
   
             <!-- ここから履歴 -->
   
-            <div v-for="value in videos" v-bind:key="videos[0]">
+            <div v-for="value in videos" v-bind:key="value[0]">
               <a v-bind:href="value[1] + '?videoplayed=' + value[2]" target="_blank" rel="noopener noreferrer">
                 <p class="sc-1otp79h-0">{{value[5]}}<span
                     class="plye_dsecond">{{ value[3] |Subtract_ten}}:{{ value[4] | rounded_down}}</span></p>
@@ -171,3 +171,5 @@
     },
   });
 })();
+//1592787362382
+//1592787362391

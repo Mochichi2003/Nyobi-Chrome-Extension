@@ -1,7 +1,7 @@
 {
   "name": "noyobibi",
   "description": "N予備校の動画履歴を表示する拡張機能です。またスペースをおすことで動画の停止と再生ができるようにする",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "manifest_version": 2,
   "icons": {
     "48": "icons/icon_48.png",
@@ -25,12 +25,7 @@
     },
     {
       "matches": ["https://www.nnn.ed.nico/lessons/*"],
-      "js": [
-        "vue.js",
-        "jquery-3.5.1.min.js",
-        "js.cookie.js",
-        "content-video.js"
-      ]
+      "js": ["vue.js", "content-video.js"]
     }
   ],
   "permissions": [
